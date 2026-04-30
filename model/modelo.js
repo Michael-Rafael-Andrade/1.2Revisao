@@ -41,11 +41,14 @@ Demanda.init( // construtor com a definição dos atributos
     },
 );
 
-// Criar o banco de dados dentro da tabela 'demandas_ti' que está dentro do mysql 
-sequelize.sync({ alter: true }).then(() => { // alter: true, para aplicar alterações de código no BD
-    console.log('Modelos sincronizados com o banco de dados.');
-}).catch((error) => {
-    console.error('Erro ao sincronizar modelos com o banco de dados: ', error);
-});
+
+
+// // APÓS CRIAR OS ELEMENTOS DA TABELA DEVE COMENTAR TODO O CÓDIGO DE CRIAÇÃO DOS ELEMENTOS DENTRO DA TABELA 
+// // Criar o banco de dados dentro da tabela 'demandas_ti' que está dentro do mysql 
+// sequelize.sync({ alter: true }).then(() => { // alter: true, para aplicar alterações de código no BD
+//     console.log('Modelos sincronizados com o banco de dados.');
+// }).catch((error) => {
+//     console.error('Erro ao sincronizar modelos com o banco de dados: ', error);
+// });
 
 module.exports = Demanda;
