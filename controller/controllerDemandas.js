@@ -20,3 +20,18 @@ exports.cria_post = async function (req, res){
     await Demanda.create(nova_demanda);
     return res.redirect('/');
 };
+
+exports.consulta = async function(req,res){
+    const id_demanda = req.params.id;
+    const demanda = await Demanda.findByPk(id_demanda);
+
+    // formata a data de criação de cada demanda para o formato brasileiro
+    demanda.criada_em_fmt = new Date(demanda.criada_em).toLocaleDateString('pt-BR');
+
+    const contexto = {
+        titulo_pagina: "Detalhes da Demanda",
+        demanda: demanda,
+    }
+
+    res.render('consulta_demanda', contexto);
+}

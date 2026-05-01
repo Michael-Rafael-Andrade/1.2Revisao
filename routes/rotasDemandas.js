@@ -7,5 +7,7 @@ var controllerDemandas = require('../controller/controllerDemandas.js');
 router.get('/cria', controllerDemandas.cria_get);
 // Rota para método POST da criação de demanda
 router.post('/cria', controllerDemandas.cria_post);
+// Roda para consulta de demanda
+router.get('/consulta/:id', controllerDemandas.consulta);
 
 module.exports = router;
