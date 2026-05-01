@@ -6,11 +6,11 @@ exports.tela_principal = async function(req, res){
 
     // Criando uma nova demanda, utilizando o método do Sequelize
     // Após inserir uma vez deve apagar para que não fique inserindo automaticamente toda vez
-    await Demanda.create({
-        titulo: 'Primeira demanda',
-        texto: 'Texto da primeira demanda',
-        urgencia: 3,
-    })
+    // await Demanda.create({
+    //     titulo: 'Primeira demanda',
+    //     texto: 'Texto da primeira demanda',
+    //     urgencia: 3,
+    // })
 
     // lista todas as demandas utilizando o método do Sequelize
     const demandas = await Demanda.findAll();
