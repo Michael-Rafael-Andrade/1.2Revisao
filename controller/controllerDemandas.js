@@ -35,3 +35,15 @@ exports.consulta = async function(req,res){
 
     res.render('consulta_demanda', contexto);
 }
+
+exports.altera_status = async function(req, res){
+    const id_demanda = req.params.id;
+    const novo_status = req.params.novo_status;
+
+    await Demanda.update(
+        { status: novo_status }, // novos valores dos atributos
+        { where: { id: id_demanda }} // condição para encontrar a demanda a ser utilizada
+    );
+
+    return res.redirect('/'); // redireciona para / ou página principal
+}
