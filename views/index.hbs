@@ -4,7 +4,8 @@
 {{!-- INSERÇÃO DO PARTIAL --}}
 {{> navbar }}
 
-<div class="card h-100">
+{{!-- <div class="card h-100"> --}}
+<div class="card">
     <div class="card-body">
         <h5 class="card-title">Demandas Cadastradas</h5>
         {{#if demandas}}
@@ -31,9 +32,9 @@
                         <td>{{urgencia}}</td>
                         <td>{{status}}</td>
                         <td>{{criada_em_fmt}}</td>
-                        <td class="d-flex gap-2">
-                            <a href="/demandas/consulta/{{id}}" class="btn btn-sm btn-secondary"><i
-                                    class="bi bi-eye"></i></a>
+                        {{!-- <td class="d-flex gap-2"> --}}
+                        <td class="d-flex">
+                            <a href="/demandas/consulta/{{id}}" class="btn btn-sm btn-secondary"><i class="bi bi-eye"></i></a>
                             {{!--
                         </td> --}}
                         <div class="dropdown">

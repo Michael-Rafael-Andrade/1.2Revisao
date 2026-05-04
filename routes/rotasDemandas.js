@@ -10,6 +10,6 @@ router.post('/cria', controllerDemandas.cria_post);
 // Roda para consulta de demanda
 router.get('/consulta/:id', controllerDemandas.consulta);
 // Rota para alteração de status da demanda
-router.post('/altera_status/:id/:novo_status', controllerDemandas.altera_status);
+router.post('/status/:id/:novo_status', controllerDemandas.altera_status);
 
 module.exports = router;

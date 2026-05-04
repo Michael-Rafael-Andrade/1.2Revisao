@@ -4,10 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var hbs = require('hbs');  // importar o hbs
+
+
+var indexRouter = require('./routes/rotasIndex');
 var demandasRouter = require('./routes/rotasDemandas.js');
-
-
-var rotasIndex = require('./routes/rotasIndex');
 // var usersRouter = require('./routes/users');
 
 var app = express();
@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join( __dirname, 'public')));
 
-app.use('/', rotasIndex);
+app.use('/', indexRouter);
 app.use('/demandas', demandasRouter);
 
 

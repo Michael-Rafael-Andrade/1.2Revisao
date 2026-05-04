@@ -1,5 +1,5 @@
 
-const Demanda = require('../model/modelo');
+const Demanda = require('../model/modelos');
 
 exports.cria_get = function (req, res) {
     const contexto = {
@@ -58,9 +58,8 @@ exports.consulta = async function (req, res) {
     try {
         const demanda = await Demanda.findByPk(id_demanda);
         // Validação do parãmetro id (deve ser inteiro positivo)
-        if (!id_demanda || Number.isNaN(id_demanda) || !Number.isInteger(id_demanda) || id_demanda <= 0) {
-            return res.status(400).send('ID inválido');
-            // return res.status(404).send('Demanda não encontrada');
+        if (!id_demanda ) {
+            return res.status(404).send('Demanda não encontrada');
         }
 
         // formata a data de criação de cada demanda para o formato brasileiro
@@ -79,7 +78,7 @@ exports.consulta = async function (req, res) {
 };
 
 exports.altera_status = async function (req, res) {
-    const id_demanda = req.params.id;
+    const id_demanda = Number( req.params.id );
     const novo_status = req.params.novo_status;
 
     

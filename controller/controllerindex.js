@@ -1,5 +1,5 @@
 // importação da classe que gerencia as notas na memória
-const Demanda = require('../model/modelo.js');
+const Demanda = require('../model/modelos.js');
 
 // cria e já exporta a função que será responsável pela tela principal
 exports.tela_principal = async function (req, res) {
